@@ -1,0 +1,106 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+/* Floating search card sits on top of the map without covering it */
+#search-card {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(560px, calc(100% - 2rem));
+    z-index: 1000;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(6px);
+}
+
+/* Results offcanvas: narrower on desktop so the map remains the focus */
+#results-offcanvas {
+    width: min(380px, 90vw);
+}
+
+/* On small screens, slide the results in from the bottom and keep it short
+   so the map stays visible above it */
+@media (max-width: 575.98px) {
+    #results-offcanvas {
+        top: auto;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 55vh;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        transform: translateY(100%);
+    }
+    #results-offcanvas.showing,
+    #results-offcanvas.show {
+        transform: translateY(0);
+    }
+    #results-offcanvas.hiding {
+        transform: translateY(100%);
+    }
+}
+
+.result-item {
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.result-item:hover {
+    background-color: var(--bs-light);
+}
+
+.result-name {
+    font-weight: 600;
+    color: var(--bs-body-color);
+}
+
+.result-address {
+    font-size: 0.85rem;
+    color: var(--bs-secondary-color);
+}
+
+.result-description {
+    font-size: 0.85rem;
+    color: var(--bs-body-color);
+}
+
+.result-attribution {
+    font-size: 0.75rem;
+}
+
+.result-attribution img {
+    vertical-align: middle;
+    margin-right: 0.25rem;
+}
+
+/* Make Leaflet popups look a bit nicer with Bootstrap */
+.leaflet-popup-content h1 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.leaflet-popup-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.leaflet-popup-content li {
+    margin-bottom: 0.25rem;
+}
