@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -8,6 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Initialize Gemini (new @google/genai SDK)
 const ai = new GoogleGenAI({ apiKey: process.env.AQ.Ab8RN6Ju4MkVN482yd6mIJ31CKO9nU3ugLSnjkM4AAW13A6Z7w });
 
 app.get('/live', (req, res) => {
@@ -60,6 +60,7 @@ Respond ONLY with a raw JSON object (no markdown, no code fences) of the form:
         });
 
         let text = (response.text ?? "").replace(/```json/g, "").replace(/```/g, "").trim();
+
         // Extract Maps grounding attribution (required by Google Maps grounding TOS).
         // Forward the full `maps` object (title, uri, placeId, etc.) plus the widget
         // context token and the raw groundingSupports so the frontend can render
