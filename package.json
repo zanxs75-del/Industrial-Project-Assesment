@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@google/genai": "^2.9.0",
+    "nodemon": "^3.1.14"
+  }
+}
