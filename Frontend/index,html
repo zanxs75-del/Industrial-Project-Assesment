@@ -76,7 +76,7 @@
     <!-- Google Maps API (must load before GoogleMutant) -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd5SDMkt99SjnjRWRsTZ6fv6-Rv2y9bR4"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AQ.Ab8RN6Ju4MkVN482yd6mIJ31CKO9nU3ugLSnjkM4AAW13A6Z7w"></script>
     <script src="https://unpkg.com/leaflet.gridlayer.googlemutant@latest/dist/Leaflet.GoogleMutant.js"></script>
 
     <!-- Bootstrap JS -->
