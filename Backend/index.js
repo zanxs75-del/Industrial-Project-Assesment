@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 // Initialize Gemini (new @google/genai SDK)
-const ai = new GoogleGenAI({ apiKey: process.env.AQ.Ab8RN6Ju4MkVN482yd6mIJ31CKO9nU3ugLSnjkM4AAW13A6Z7w });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 app.get('/live', (req, res) => {
     res.json({ message: "Server is live" });
